@@ -47,7 +47,7 @@ npx cap open android
 
 4. In Android Studio, go to **Build → Build APK(s)**.
 
-## Map key (optional)
+## Map key (Optional)
 
 The map uses OpenStreetMap by default. For a sharper dark map, get a free key from CARTO and paste it into Settings under Map key.
 

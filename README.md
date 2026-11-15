@@ -55,6 +55,11 @@ The map uses OpenStreetMap by default. For a sharper dark map, get a free key fr
 
 Keep the check interval at 2 seconds or slower. The plane sources are free volunteer networks.
 
+## Good to know
+
+If you happen to find any issues let me know 
+https://github.com/PlaneGame07/SkyHome/issues
+
 ## Credits
 
 - Weather: [Open-Meteo](https://open-meteo.com)

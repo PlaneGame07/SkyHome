@@ -13,7 +13,7 @@ A landscape tablet dashboard for Android. It shows the weather for your location
 - Three themes (Classic, Black, White), and Liquid Glass styles
 - Standby clock mode
 
-##In App Images
+## In App Images
 <p align="center">
   <img width="640" alt="Home" src="https://github.com/user-attachments/assets/d94a01f4-8b65-4e74-a1f5-348e9c8025fd" />
   <img width="640" alt="SkyMap" src="https://github.com/user-attachments/assets/48301ea3-758f-4ba7-9369-538d0b0631a2" />

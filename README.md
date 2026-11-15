@@ -1,0 +1,61 @@
+# SkyHome
+
+A landscape tablet dashboard for Android. It shows the weather for your location, live aircraft within a chosen radius, airports on a map, and airport weather.
+
+**For recreational use and situational awareness only.** SkyHome must not be used for navigation, flight planning or any tactical decision. Nothing in it is checked against official aviation or weather sources.
+
+## Features
+
+- Current weather, hourly and 7 day forecast, with a choice of forecast models
+- Live planes within your chosen radius, with a card showing route, aircraft, altitude, speed and airline
+- Airports on the Sky map, with raw or plain English weather and a photo
+- Plane logbook grouped by aircraft family
+- Three themes (Classic, Black, White), and Liquid Glass styles
+- Standby clock mode
+
+## Install
+
+Download the latest APK from the **Releases** page and install it on an Android tablet. Android will warn that the app is from an unknown source. That's normal for apps installed outside the Play Store.
+
+## Build it yourself
+
+1. Install Node.js and Android Studio.
+2. Make a folder, copy the contents of `app/` into a subfolder called `www`.
+3. In that folder run:
+
+```
+npm init -y
+npm install @capacitor/core @capacitor/android
+npm install -D @capacitor/cli
+npx cap init SkyHome com.skyhome.app --web-dir www
+npx cap add android
+npx cap sync
+npx cap open android
+```
+
+4. In Android Studio, go to **Build → Build APK(s)**.
+
+## Map key (optional)
+
+The map uses OpenStreetMap by default. For a sharper dark map, get a free key from CARTO and paste it into Settings under Map key.
+
+## Tips for plane data
+
+Keep the check interval at 2 seconds or slower. The plane sources are free volunteer networks.
+
+## Credits
+
+- Weather: [Open-Meteo](https://open-meteo.com)
+- Maps: [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors, [CARTO](https://carto.com) (optional key)
+- Aircraft photos: [Planespotters.net](https://www.planespotters.net) and [Airport-Data.com](https://www.airport-data.com) photographers
+- Airport and aircraft type photos: [Wikipedia](https://www.wikipedia.org) and [Wikimedia Commons](https://commons.wikimedia.org) contributors
+- Flight data: [adsb.lol](https://adsb.lol), [adsbdb](https://www.adsbdb.com), [AviationWeather.gov](https://aviationweather.gov)
+- Airport list: [OurAirports](https://ourairports.com)
+
+## Privacy
+
+SkyHome has no server and collects nothing. Your approximate location is sent to the services above so they can return local weather, nearby aircraft and map tiles.
+
+## Licence
+
+MIT. See [LICENSE](LICENSE).

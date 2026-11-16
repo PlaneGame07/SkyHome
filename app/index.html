@@ -171,7 +171,7 @@ body.al .big *{animation-play-state:paused}body.noanim *{animation:none!importan
 <script>
 
 const $=id=>document.getElementById(id),rad=Math.PI/180,n_=x=>typeof x==='number';
-const APP_VER='v1.0.0';
+const APP_VER='v1.0.1';
 const DEF={v5:1,lat:-25.99,lon:28.13,name:'Midrand',rad:15,poll:3,tu:'C',su:'kmh',au:'ft',h24:1,photo:1,ground:0,wake:1,hide:30,dim:0,pr:'msl',obs:1,zh:100,za:100,zp:100,snd:0,maxalt:0,st:'',skin:'pro',ap:'classic',glv:'medium',acc:'',wsrc:'cons',fs:1,perf:'auto',anim:1,wc:0,px:'',mk:'',metar:'raw',standby:0,setup:0,page:'home',v:5};
 let S=Object.assign({},DEF);try{Object.assign(S,JSON.parse(localStorage.getItem('sky')||'{}'));}catch(e){}
 if((S.v||0)<3){if(S.theme)S.ap=S.theme;S.wsrc='cons';S.skin='pro';S.v=3;}
@@ -452,8 +452,8 @@ function tick(){
   const now=Date.now();scan();
   if($('set').classList.contains('on'))for(const e of near.values())if(e.fake)e.keep=now;
   for(const [h,e] of near)if((e.left&&now-e.left>6000)||(e.fake&&now-(e.keep||e.first)>15000))near.delete(h);
-  let c=pick();if(c&&!c.shown)c.shown=now;
-  if(c&&!c.fake&&S.hide&&now-c.shown>S.hide*1000){c.dismissed=true;c=pick();if(c&&!c.shown)c.shown=now;}
+  let c=SKPIN&&air.get(SKPIN.hex)===SKPIN?SKPIN:pick();if(c&&!c.shown)c.shown=now;
+  if(c&&!c.fake&&S.hide&&now-c.shown>S.hide*1000){c.dismissed=true;if(c===SKPIN)SKPIN=null;c=SKPIN&&air.get(SKPIN.hex)===SKPIN?SKPIN:pick();if(c&&!c.shown)c.shown=now;}
   show(c);
   const n=[...near.values()].filter(e=>!e.left).length;
   {const dc=feedOk===null?'':feedOk?'ok':'bad';if(tc.dot!==dc){tc.dot=dc;$('dot').className=dc;}}
@@ -543,7 +543,7 @@ function dyn(e){
 const PHT="data:image/svg+xml;utf8,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><rect width="600" height="400" fill="#1b2f4a"/><path d="M300 80l14 95 150 75v22l-150-36-6 86 50 36v18l-58-14-58 14v-18l50-36-6-86-150 36v-22l150-75z" fill="#dfe7f2"/><text x="300" y="380" fill="#9fb0c6" font-size="22" text-anchor="middle" font-family="sans-serif">Test photo area</text></svg>');
 function testPlane(ph){const now=Date.now();near.set('test',{fake:true,first:now,hex:'test',fl:'SAA213',reg:'ZS-SXA',type:'A320',alt:6800,gnd:false,gs:214,trk:245,vs:-900,d:Math.min(7.4,S.rad),b:60,d0:Math.min(7.4,S.rad),b0:60,done:true,la:-27.2,lo:26.2,fix:now,sq:'7000',cat:'A3',tas:226,mach:0.35,nav:5000,tmax:0,
   photo:ph?{src:PHT,link:'#',by:'Test Photographer',kind:'exact'}:null,route:{callsign_iata:'SA213',airline:{name:'South African Airways'},origin:{iata_code:'CPT',municipality:'Cape Town',latitude:-33.97,longitude:18.6},destination:{iata_code:'JNB',municipality:'Johannesburg',latitude:-26.14,longitude:28.24}},ac:{manufacturer:'Airbus',type:'A320 214',registered_owner:'South African Airways',registered_owner_country_name:'South Africa'}});cur=null;tick();}
-$('alert').onclick=()=>{const e=near.get(cur);if(e){e.fake?near.delete(cur):e.dismissed=true;}tick();};
+$('alert').onclick=()=>{if(SKPIN&&cur===SKPIN.hex)SKPIN=null;const e=near.get(cur);if(e){e.fake?near.delete(cur):e.dismissed=true;}tick();};
 
 function showPhoto(e){
   const im=$('aimg'),box=$('acard'),cr=$('cred');
@@ -711,11 +711,12 @@ function skClickHit(e){
   for(const [hx,p] of src){if(p.unseen&&now-p.unseen>8000)continue;const [la,lo]=xp(p,now),q=skMap.latLngToContainerPoint([la,lo]),d=(q.x-click.x)**2+(q.y-click.y)**2;if(d<bd){bd=d;best=[hx,p];}}
   if(best)skPlaneOpen(air.get(best[0])||best[1],best[0]);
 }
+let SKPIN=null;
 function skPlaneOpen(p,hx){
   $('apn').classList.remove('on');$('skpop').classList.remove('on');
-  p.hex=hx;p.pin=true;p.dismissed=false;p.shown=0;p.left=0;if(!p.first)p.first=Date.now();
+  p.hex=hx;p.pin=true;p.dismissed=false;p.shown=0;if(!p.first)p.first=Date.now();
   if(!p.done&&!p.lk){p.lk=1;lookup(p);}
-  near.set(hx,p);tick();
+  SKPIN=p;tick();
 }
 $('skx').onclick=()=>$('skpop').classList.remove('on');
 const skTr=new Map(),PLN=new Path2D('M0,-12L2,-4L11,2L11,4L2,2L2,8L5,10L5,12L0,11L-5,12L-5,10L-2,8L-2,2L-11,4L-11,2L-2,-4Z');

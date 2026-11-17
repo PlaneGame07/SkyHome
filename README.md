@@ -1,6 +1,6 @@
 # SkyHome
 
-A landscape tablet dashboard for Android. It shows the weather for your location, live aircraft within a chosen radius, airports on a map, and airport weather.
+A landscape tablet dashboard for Android Only. It shows the weather for your location, live aircraft within a chosen radius, airports on a map, and airport weather.
 
 **For recreational use and situational awareness only.** SkyHome must not be used for navigation, flight planning or any tactical decision. Nothing in it is checked against official aviation or weather sources.
 

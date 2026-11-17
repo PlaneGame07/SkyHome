@@ -27,6 +27,7 @@ Tablet dashboard for weather, nearby planes and airports. Built with Claude.
 
 ## Install
 
+Go to here --> https://github.com/PlaneGame07/SkyHome/releases/
 Download the latest APK from the **Releases** page and install it on an Android tablet. Android will warn that the app is from an unknown source. That's normal for apps installed outside the Play Store.
 
 ## Build it yourself

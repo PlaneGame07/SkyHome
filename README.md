@@ -63,6 +63,9 @@ Keep the check interval at 2 seconds or slower. The plane sources are free volun
 If you happen to find any issues let me know 
 https://github.com/PlaneGame07/SkyHome/issues
 
+Let me know what you would like to see next!
+https://github.com/PlaneGame07/SkyHome/discussions/1
+
 ## Credits
 
 - Weather: [Open-Meteo](https://open-meteo.com)

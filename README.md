@@ -15,27 +15,27 @@ A landscape tablet dashboard for **Android Only**. It shows the weather for your
 
 ## In App Images
 
-  <img width="640" alt="image" src="https://github.com/user-attachments/assets/4a665427-c185-4970-b48e-52c37a3aed66" />
+  <img width="260" alt="image" src="https://github.com/user-attachments/assets/4a665427-c185-4970-b48e-52c37a3aed66" />
   
   Example Minimal Homepage  
   
-  <img width="640" alt="image" src="https://github.com/user-attachments/assets/ad976c5e-664c-40d5-896d-72f8f631e51d" />
+  <img width="260" alt="image" src="https://github.com/user-attachments/assets/ad976c5e-664c-40d5-896d-72f8f631e51d" />
   
   Another Example Minimal Homepage
   
-  <img width="640" alt="Home" src="https://github.com/user-attachments/assets/d94a01f4-8b65-4e74-a1f5-348e9c8025fd" />
+  <img width="260" alt="Home" src="https://github.com/user-attachments/assets/d94a01f4-8b65-4e74-a1f5-348e9c8025fd" />
   
   Old Homepage Example
   
-  <img width="640" alt="SkyMap" src="https://github.com/user-attachments/assets/48301ea3-758f-4ba7-9369-538d0b0631a2" />
+  <img width="260" alt="SkyMap" src="https://github.com/user-attachments/assets/48301ea3-758f-4ba7-9369-538d0b0631a2" />
   
   Example Of Sky Section
   
-  <img width="640" alt="Plane Card" src="https://github.com/user-attachments/assets/a30cbfde-79bd-447d-913c-91cdf4fcf64c" />
+  <img width="260" alt="Plane Card" src="https://github.com/user-attachments/assets/a30cbfde-79bd-447d-913c-91cdf4fcf64c" />
   
   Example Plane Card Popup
   
-  <img width="640" alt="Logbook" src="https://github.com/user-attachments/assets/ff669a16-0c2e-4053-95b7-85ead2cb486e" />
+  <img width="260" alt="Logbook" src="https://github.com/user-attachments/assets/ff669a16-0c2e-4053-95b7-85ead2cb486e" />
   
   Example of the Logbook
 

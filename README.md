@@ -15,13 +15,13 @@ A landscape tablet dashboard for **Android Only**. It shows the weather for your
 
 ## In App Images
 
-  <img width="640" alt="image" src="https://github.com/user-attachments/assets/4a665427-c185-4970-b48e-52c37a3aed66" />
+  <img width="640" alt="image" src="https://github.com/user-attachments/assets/a8ddc5ce-6344-44ff-a5ce-2de50e196f4d" />
   
-  Example Minimal Homepage  
+  Example Minimal Homepage (Small Clock)
   
-  <img width="640" alt="image" src="https://github.com/user-attachments/assets/ad976c5e-664c-40d5-896d-72f8f631e51d" />
-  
-  Another Example Minimal Homepage
+  <img width="640" alt="image" src="https://github.com/user-attachments/assets/ed4a227e-0a6e-4c24-8236-7d3dfc77bd53" />
+
+  Another Example Minimal Homepage (Small Clock)
   
   <img width="640" alt="Home" src="https://github.com/user-attachments/assets/d94a01f4-8b65-4e74-a1f5-348e9c8025fd" />
   

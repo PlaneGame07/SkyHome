@@ -48,25 +48,11 @@ Tablet dashboard for weather, nearby planes and airports. Built with Claude.
 Go to here --> https://github.com/PlaneGame07/SkyHome/releases/
 Download the latest APK from the **Releases** page and install it on an Android tablet. Android will warn that the app is from an unknown source. That's normal for apps installed outside the Play Store.
 
-## Build it yourself
+## Image Key (Optional)
 
-1. Install Node.js and Android Studio.
-2. Make a folder, copy the contents of `app/` into a subfolder called `www`.
-3. In that folder run:
+The images used for the backgrounds are from Wikimedia Commons and for better photos put a Pexels Key
 
-```
-npm init -y
-npm install @capacitor/core @capacitor/android
-npm install -D @capacitor/cli
-npx cap init SkyHome com.skyhome.app --web-dir www
-npx cap add android
-npx cap sync
-npx cap open android
-```
-
-4. In Android Studio, go to **Build → Build APK(s)**.
-
-## Map key (Optional)
+## Map Key (Optional)
 
 The map uses OpenStreetMap by default. For a sharper dark map, get a free key from CARTO and paste it into Settings under Map key.
 
